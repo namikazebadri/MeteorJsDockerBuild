@@ -8,6 +8,10 @@ WORKDIR $METEOR_HOME
 
 COPY . $METEOR_HOME
 
+RUN apk --no-cache add curl
+
+RUN curl https://install.meteor.com/ | sh
+
 # install dependencies
 RUN npm install
 
