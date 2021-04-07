@@ -1,4 +1,4 @@
-FROM node:14.16.0-alpine3.13
+FROM node:14.16.0
 
 ENV METEOR_HOME=/app
 
@@ -8,7 +8,7 @@ WORKDIR $METEOR_HOME
 
 COPY . $METEOR_HOME
 
-RUN apk --no-cache add curl
+RUN chown -Rh $USER:$USER .meteor/local
 
 RUN curl https://install.meteor.com/ | sh
 
