@@ -13,8 +13,6 @@ RUN curl https://install.meteor.com/ | sh
 # install dependencies
 RUN npm install
 
-RUN chown -Rh $USER:$USER .meteor/local
-
 EXPOSE 3000
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
