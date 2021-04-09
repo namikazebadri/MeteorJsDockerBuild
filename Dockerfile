@@ -8,12 +8,12 @@ WORKDIR $METEOR_HOME
 
 COPY . $METEOR_HOME
 
-RUN chown -Rh $USER:$USER .meteor/local
-
 RUN curl https://install.meteor.com/ | sh
 
 # install dependencies
 RUN npm install
+
+RUN chown -Rh $USER:$USER .meteor/local
 
 EXPOSE 3000
 
